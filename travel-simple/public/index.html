@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Travel Booking — Admin Panel</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f9;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        background: #1e88e5;
+        color: white;
+        padding: 20px 0;
+        margin-bottom: 30px;
+      }
+
+      .container {
+        width: 70%;
+        margin: auto;
+      }
+
+      .card {
+        background: white;
+        padding: 25px;
+        margin-bottom: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        margin-top: 0;
+        color: #1e88e5;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        background: #1e88e5;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        background: #0d47a1;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin: 25px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Travel Booking System — One Page Admin</h1>
+
+    <div class="container">
+      <!-- ADD DESTINATION -->
+      <div class="card">
+        <h2>Add Destination</h2>
+        <form action="/destinations/add" method="POST">
+          <label>Name:</label>
+          <input type="text" name="name" required />
+
+          <label>Country:</label>
+          <input type="text" name="country" required />
+
+          <label>Best Season:</label>
+          <input type="text" name="bestSeason" required />
+
+          <button type="submit">Add Destination</button>
+        </form>
+      </div>
+
+      <!-- ADD PACKAGE -->
+      <div class="card">
+        <h2>Add Package</h2>
+        <form action="/packages/add" method="POST">
+          <label>Title:</label>
+          <input type="text" name="title" required />
+
+          <label>Price:</label>
+          <input type="number" name="price" required />
+
+          <label>Duration:</label>
+          <input type="text" name="duration" required />
+
+          <label>Destination ID:</label>
+          <input type="text" name="destinationId" required />
+
+          <button type="submit">Add Package</button>
+        </form>
+      </div>
+
+      <!-- ADD USER -->
+      <div class="card">
+        <h2>Add User</h2>
+        <form action="/users/add" method="POST">
+          <label>Name:</label>
+          <input type="text" name="name" required />
+
+          <label>Email:</label>
+          <input type="email" name="email" required />
+
+          <label>Phone:</label>
+          <input type="text" name="phone" required />
+
+          <button type="submit">Add User</button>
+        </form>
+      </div>
+
+      <!-- ADD BOOKING -->
+      <div class="card">
+        <h2>Add Booking</h2>
+        <form action="/bookings/add" method="POST">
+          <label>User ID:</label>
+          <input type="text" name="userId" required />
+
+          <label>Package ID:</label>
+          <input type="text" name="packageId" required />
+
+          <label>Booking Date (YYYY-MM-DD):</label>
+          <input type="text" name="bookingDate" required />
+
+          <label>Status:</label>
+          <input type="text" name="status" required />
+
+          <button type="submit">Add Booking</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
